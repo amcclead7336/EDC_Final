@@ -18,3 +18,10 @@ After Review we where supposed to
 After preprocessing the data and testing multiple models I am able to create and deploy a model with 90% accuracy using a Random Forest model. I am also able to containerize and deploy the container the cloud container registry. See bellow an image of the saved models:
 
 ![ML Model Backup](https://github.com/amcclead7336/EDC_Final/blob/master/docs/Screen%20Shot%202021-06-06%20at%202.21.54%20PM.png?raw=true)
+
+
+and you can see here the file outputed to the cloud registry:
+![Container Registry](https://github.com/amcclead7336/EDC_Final/blob/master/docs/Screen%20Shot%202021-06-06%20at%202.22.15%20PM.png?raw=true)
+
+This is a demo of the api in use, run from a container:
+![FlaskAPI in use](https://github.com/amcclead7336/EDC_Final/blob/master/docs/Screen%20Shot%202021-06-06%20at%202.16.34%20PM.png?raw=true)
