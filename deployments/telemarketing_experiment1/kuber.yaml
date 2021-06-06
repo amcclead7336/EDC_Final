@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telemarketingexperiment1-prediction
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemarketingexperiment1-prediction
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: telemarketingexperiment1-prediction
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: telemarketingexperiment1-prediction
+        image: finalregistrycis325.azurecr.io/telemarketingexperiment1
+        ports:
+        - containerPort: 5010
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: telemarketingexperiment1-prediction
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5010
+  selector:
+    app: telemarketingexperiment1-prediction
